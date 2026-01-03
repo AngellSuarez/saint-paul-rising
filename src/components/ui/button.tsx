@@ -21,13 +21,13 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Campaign specific variants
         volunteer:
-          "bg-campaign-green text-primary-foreground hover:bg-campaign-green/90 shadow-strong rounded-sm",
+          "bg-campaign-green text-primary-foreground hover:bg-campaign-green/90 shadow-strong rounded-3xl",
         donate:
           "bg-campaign-yellow text-foreground hover:bg-campaign-yellow/90 font-bold shadow-strong rounded-sm",
         hero:
-          "bg-campaign-green text-primary-foreground hover:bg-campaign-green/90 font-bold shadow-strong rounded-sm",
+          "bg-campaign-green text-primary-foreground font-bold rounded-[8px] transition-transform duration-300 ease-out hover:-translate-y-1 focus:-translate-y-1",
         heroYellow:
-          "bg-campaign-yellow text-foreground hover:bg-campaign-yellow/90 font-bold shadow-strong rounded-sm border-2 border-campaign-yellow",
+          "bg-campaign-yellow text-foreground font-bold rounded-[8px] border-2 border-campaign-yellow transition-transform duration-300 ease-out hover:-translate-y-1 focus:-translate-y-1",
         action:
           "bg-campaign-green text-primary-foreground hover:bg-campaign-green/90 font-bold shadow-strong rounded-sm",
       },
