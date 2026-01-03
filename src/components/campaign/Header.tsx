@@ -1,10 +1,12 @@
 import { Facebook, Twitter, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import campaignLogo from "@/assets/campaign-logo.png";
 
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-campaign-blue/95 backdrop-blur-sm">
-      <div className="container flex items-center justify-between py-3">
+      <div className="container flex items-center justify-between py-2">
         {/* Social Icons - Left */}
         <div className="flex items-center gap-3">
           <a 
@@ -31,19 +33,22 @@ const Header = () => {
         </div>
 
         {/* Logo - Center */}
-        <div className="font-display text-campaign-cream">
-          <span className="text-campaign-yellow text-2xl md:text-3xl">ALI</span>
-          <span className="block text-xs md:text-sm tracking-widest -mt-1">FOR SAINT PAUL</span>
-        </div>
+        <Link to="/">
+          <img 
+            src={campaignLogo} 
+            alt="Ali for Saint Paul" 
+            className="h-12 md:h-14 w-auto"
+          />
+        </Link>
 
         {/* Navigation - Right */}
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
+          <Link to="/" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
             Home
-          </a>
-          <a href="#about" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
+          </Link>
+          <Link to="/about" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
             About
-          </a>
+          </Link>
           <a href="#volunteer" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
             Volunteer
           </a>

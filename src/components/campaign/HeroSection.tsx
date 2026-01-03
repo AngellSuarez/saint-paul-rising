@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import candidatePortrait from "@/assets/candidate-portrait.jpg";
 import sunburstBg from "@/assets/sunburst-bg.jpg";
+import campaignLogo from "@/assets/campaign-logo.png";
 
 const HeroSection = () => {
   return (
@@ -17,23 +18,30 @@ const HeroSection = () => {
       <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-center min-h-[calc(100vh-5rem)] py-12">
         {/* Left Column - Text & CTAs */}
         <div className="flex flex-col gap-6 animate-slide-up">
-          {/* Logo */}
-          <div className="font-display">
-            <span className="text-campaign-yellow text-5xl md:text-7xl drop-shadow-lg" style={{ textShadow: '3px 3px 0 hsl(216 70% 23%)' }}>ALI</span>
-            <span className="block text-campaign-blue text-xl md:text-2xl tracking-widest -mt-2" style={{ textShadow: '1px 1px 0 hsl(45 90% 55%)' }}>FOR SAINT PAUL</span>
+          {/* Subtle white background with gradient fade */}
+          <div className="relative">
+            <div className="absolute inset-0 -m-6 bg-gradient-to-r from-white/90 via-white/70 to-transparent rounded-lg blur-sm" />
+            <div className="relative z-10 flex flex-col gap-6">
+              {/* Logo Image */}
+              <img 
+                src={campaignLogo} 
+                alt="Ali for Saint Paul" 
+                className="w-64 md:w-80 h-auto"
+              />
+
+              {/* Headline */}
+              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl leading-tight">
+                <span className="text-campaign-blue" style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}>LET'S BUILD A</span><br />
+                <span className="text-campaign-blue" style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}>SAINT PAUL</span><br />
+                <span className="text-campaign-green" style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.6)' }}>FOR ALL OF US.</span>
+              </h1>
+
+              {/* Subheadline */}
+              <p className="font-body text-lg md:text-xl max-w-md text-foreground">
+                Join our grassroots movement fighting for bold, progressive change for Saint Paul.
+              </p>
+            </div>
           </div>
-
-          {/* Headline */}
-          <h1 className="font-display text-3xl md:text-5xl lg:text-6xl leading-tight">
-            <span className="text-campaign-blue" style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}>LET'S BUILD A</span><br />
-            <span className="text-campaign-blue" style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}>SAINT PAUL</span><br />
-            <span className="text-campaign-green" style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.6)' }}>FOR ALL OF US.</span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="font-body text-lg md:text-xl max-w-md bg-campaign-cream/80 p-3 rounded-sm">
-            Join our grassroots movement fighting for bold, progressive change for Saint Paul.
-          </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4">

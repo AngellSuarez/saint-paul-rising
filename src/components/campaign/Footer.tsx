@@ -3,6 +3,7 @@ import { Facebook, Twitter, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import campaignLogo from "@/assets/campaign-logo.png";
 
 const Footer = () => {
   const [name, setName] = useState("");
@@ -25,44 +26,49 @@ const Footer = () => {
 
   return (
     <footer className="texture-green">
-      {/* Signup Section */}
-      <div className="container py-12">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* Logo */}
-          <div className="font-display text-center lg:text-left">
-            <span className="text-campaign-yellow text-4xl md:text-5xl">ALI</span>
-            <span className="block text-campaign-cream text-sm md:text-base tracking-widest">FOR SAINT PAUL</span>
-          </div>
+      {/* Signup Section with white background */}
+      <div className="bg-white/95 py-12">
+        <div className="container">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            {/* Logo */}
+            <a href="/">
+              <img 
+                src={campaignLogo} 
+                alt="Ali for Saint Paul" 
+                className="h-20 md:h-24 w-auto"
+              />
+            </a>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 flex-1 max-w-2xl w-full">
-            <Input 
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="bg-campaign-cream border-0 flex-1"
-              required
-            />
-            <Input 
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="bg-campaign-cream border-0 flex-1"
-              required
-            />
-            <Input 
-              type="tel"
-              placeholder="Mobile #"
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-              className="bg-campaign-cream border-0 flex-1"
-            />
-            <Button variant="heroYellow" type="submit" className="whitespace-nowrap">
-              Join Us &gt;
-            </Button>
-          </form>
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 flex-1 max-w-2xl w-full">
+              <Input 
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="bg-campaign-cream border-campaign-blue/20 flex-1"
+                required
+              />
+              <Input 
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-campaign-cream border-campaign-blue/20 flex-1"
+                required
+              />
+              <Input 
+                type="tel"
+                placeholder="Mobile #"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                className="bg-campaign-cream border-campaign-blue/20 flex-1"
+              />
+              <Button variant="action" type="submit" className="whitespace-nowrap">
+                Join Us &gt;
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
 
