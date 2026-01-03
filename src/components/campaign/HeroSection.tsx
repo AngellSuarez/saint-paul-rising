@@ -9,10 +9,19 @@ const HeroSection = () => {
     <section 
       className="relative min-h-screen pt-20 overflow-hidden bg-campaign-cream"
     >
+      {/* Logo por encima del header para que se vea completamente */}
+      <div className="absolute top-0 left-[38%] transform -translate-x-1/2 z-[60]" style={{ marginTop: '-2.5rem' }}>
+        <img
+          src={campaignLogo}
+          alt="Ali for Saint Paul"
+          className="w-72 md:w-96 drop-shadow-lg"
+          style={{ pointerEvents: 'none' }}
+        />
+      </div>
       {/* Content Container */}
-      <div className="relative z-10 grid md:grid-cols-2 gap-0 items-stretch min-h-[calc(100vh-5rem)]">
+      <div className="container relative z-10 grid md:grid-cols-2 gap-8 items-stretch min-h-[calc(100vh-5rem)] py-12">
         {/* Left Column - Text & CTAs */}
-        <div className="flex flex-col gap-6 animate-slide-up py-12 px-8 container">
+        <div className="flex flex-col gap-6 animate-slide-up justify-center">
 
           {/* Subtle white background with gradient fade - Text only */}
           <div className="relative">
@@ -56,11 +65,15 @@ const HeroSection = () => {
       </div>
 
         {/* Right Column - Candidate Image */}
-        <img 
-          src={candidatePortrait} 
-          alt="Ali - Candidate for Saint Paul" 
-          className="w-full h-70 rounded-none shadow-strong object-full cover animate-slide-up"
-        />
+        <div className="flex justify-center md:justify-end items-stretch" style={{ animationDelay: '0.4s' }}>
+          <div className="relative w-full h-full md:translate-x-8">
+            <img 
+              src={candidatePortrait} 
+              alt="Ali - Candidate for Saint Paul" 
+              className="w-full h-full max-w-md rounded-xl shadow-strong object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

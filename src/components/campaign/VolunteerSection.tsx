@@ -47,7 +47,7 @@ const VolunteerSection = () => {
               placeholder="First Name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className="bg-card border-foreground/20"
+              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
               required
             />
              <Input 
@@ -55,7 +55,7 @@ const VolunteerSection = () => {
               placeholder="Last Name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              className="bg-card border-foreground/20"
+              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
               required
             />
             <Input 
@@ -63,7 +63,7 @@ const VolunteerSection = () => {
               placeholder="Phone Number"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="bg-card border-foreground/20"
+              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
               required
             />
             <Input 
@@ -71,7 +71,7 @@ const VolunteerSection = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-card border-foreground/20"
+              className="bg-card border-foreground/20 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
               required
             />
             <Input 
@@ -79,7 +79,7 @@ const VolunteerSection = () => {
               placeholder="ZIP Code"
               value={ZIPCode}
               onChange={(e) => setZIPCode(e.target.value)}
-              className="bg-card border-foreground/20 col-span-2"
+              className="bg-card border-foreground/20 col-span-2 rounded-[1vh] hover:border-campaign-yellow focus:border-campaign-yellow transition-colors"
               required
             />
             <Button variant="heroYellow" size="lg" type="submit" className="col-span-2 w-full">
