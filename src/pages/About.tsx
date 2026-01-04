@@ -71,7 +71,7 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-campaign-blue">
+      <section className="pt-24 pb-16 bg-campaign-blue texture-green">
         <div className="container text-center">
           <h1 className="font-display text-campaign-yellow text-5xl md:text-6xl mb-4">
             MEET ALI
@@ -85,7 +85,7 @@ const About = () => {
 
       {/* Bio Section */}
       <section className="py-16 bg-campaign-cream">
-        <div className="container">
+        <div className="container ">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <img
@@ -130,8 +130,8 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 bg-white">
-        <div className="container">
+      <section className="py-16 bg-white ">
+        <div className="container ">
           <h2 className="font-display text-campaign-yellow-dark text-4xl md:text-5xl text-center mb-12 text-shadow-xl">
             ALI'S VALUES
           </h2>
@@ -152,7 +152,7 @@ const About = () => {
       </section>
 
       {/* Issues Section */}
-      <section className="py-16 bg-campaign-blue">
+      <section className="py-16 bg-campaign-blue texture-green">
         <div className="container">
           <h2 className="font-display text-campaign-yellow text-4xl md:text-5xl text-center mb-4">
             THE ISSUES
@@ -181,7 +181,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-campaign-green">
+      <section className="py-16 bg-campaign-green texture-green">
         <div className="container text-center">
           <h2 className="font-display text-campaign-cream text-4xl md:text-5xl mb-6">
             JOIN THE MOVEMENT

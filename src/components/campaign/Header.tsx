@@ -11,36 +11,111 @@ const Header = () => {
     setIsOpen(!isOpen);
     console.log("Menu toggled:", !isOpen);
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const checkElement = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        requestAnimationFrame(() => {
+          const headerHeight = 150;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerHeight - 30;
+          
+          window.scrollTo({
+            top: Math.max(0, offsetPosition),
+            behavior: 'smooth'
+          });
+        });
+        return true;
+      }
+      return false;
+    };
+
+    if (!checkElement()) {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        attempts++;
+        if (checkElement() || attempts > 10) {
+          clearInterval(interval);
+        }
+      }, 50);
+    }
+  };
+
+  const handleHomeClick = () => {
+    if (window.location.pathname === '/') {
+      scrollToTop();
+    } else {
+      window.location.href = '/';
+    }
+  };
+
+  const handleAboutClick = () => {
+    if (window.location.pathname === '/about') {
+      scrollToTop();
+    } else {
+      window.location.href = '/about';
+    }
+  };
+
+  const handleVolunteerClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    const scrollVolunteer = () => {
+      scrollToSection('volunteer');
+    };
+
+    if (window.location.pathname !== '/') {
+      window.location.href = '/';
+      setTimeout(scrollVolunteer, 300);
+    } else {
+      setTimeout(scrollVolunteer, 100);
+    }
+  };
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-campaign-blue/75 backdrop-blur-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-campaign-blue/75 backdrop-blur-sm texture-green">
       {/* Logo positioned absolutely in the middle of header */}
+      {/* Mobile: Smaller, centered, inside header */}
       <div 
-        className="absolute top-1/2 transform -translate-y-1/2 z-[60]"
-        style={{
-          left: '38%',
-          '@media (max-width: 500px)': {
-            left: 'auto',
-            right: '1rem'
-          }
-        }}
+        className="md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[60]"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-transparent rounded-full blur-3xl" style={{ transform: 'scale(1.4)' }}/>
-        <br />
         <img
           src={campaignLogo}
           alt="Ali for Saint Paul"
-          className={`w-56 md:w-44 drop-shadow-lg relative ${isOpen ? 'hidden' : ''}`}
+          className={`w-32 drop-shadow-lg relative ${isOpen ? 'hidden' : ''}`}
           style={{ pointerEvents: 'none' }}
         />
       </div>
       
-      <div className="container flex items-center justify-between py-2">
+      {/* Desktop: Centered in header */}
+      <div 
+        className="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-[60]"
+        style={{ top: '-12.42%' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-transparent rounded-full blur-3xl" style={{ transform: 'scale(1.4)' }}/>
+        <img
+          src={campaignLogo}
+          alt="Ali for Saint Paul"
+          className={`w-56 drop-shadow-lg relative ${isOpen ? 'hidden' : ''}`}
+          style={{ pointerEvents: 'none' }}
+        />
+      </div>
+      
+      <div className="container flex items-center justify-between py-6">
         {/* Social Icons - Left (Desktop only) */}
         <div className="hidden md:flex items-center gap-3">
           <a 
-            href="#" 
+            href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF" 
             className="text-campaign-cream hover:text-campaign-yellow transition-colors"
-            aria-label="Facebook"
+            aria-label="TictTok"
           >
             <Facebook className="w-5 h-5" />
           </a>
@@ -52,7 +127,7 @@ const Header = () => {
             <Twitter className="w-5 h-5" />
           </a>
           <a 
-            href="#" 
+            href="https://www.instagram.com/aliforstp" 
             className="text-campaign-cream hover:text-campaign-yellow transition-colors"
             aria-label="Instagram"
           >
@@ -63,20 +138,37 @@ const Header = () => {
         {/* Navigation - Right (Desktop only) */}
        <nav className="hidden lg:flex items-center gap-6">
   {/* 1 - Link a Home */}
-  <Link to="/" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
+  <a 
+    href="/" 
+    onClick={(e) => {
+      e.preventDefault();
+      handleHomeClick();
+    }}
+    className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide"
+  >
     Home
-  </Link>
+  </a>
 
-  {/* 2 - Link a About (Siempre lleva a /about) */}
-  <Link to="/about" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
+  {/* 2 - Link a About */}
+  <a 
+    href="/about" 
+    onClick={(e) => {
+      e.preventDefault();
+      handleAboutClick();
+    }}
+    className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide"
+  >
     About
-  </Link>
+  </a>
 
-  {/* 3 - Link a Volunteer (Lleva a la Home + Ancla) */}
-  {/* Usamos Link en lugar de <a> para que React Router maneje la navegación correctamente */}
-  <Link to="/#volunteer" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
+  {/* 3 - Link a Volunteer */}
+  <a 
+    href="/#volunteer"
+    onClick={handleVolunteerClick}
+    className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide"
+  >
     Volunteer
-  </Link>
+  </a>
 
   <a href="#" className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide">
     Events
@@ -99,29 +191,37 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden bg-campaign-blue/55 border-t border-campaign-cream/20">
+        <div className="lg:hidden bg-campaign-blue/55 border-t border-campaign-cream/20 texture-green">
           <div className="container py-4 flex flex-col gap-4">
-            <Link 
-              to="/" 
-              onClick={() => setIsOpen(false)}
+            <a 
+              href="/" 
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                handleHomeClick();
+              }}
               className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
             >
               Home
-            </Link>
-            <Link 
-              to="/about"
-              onClick={() => setIsOpen(false)}
+            </a>
+            <a 
+              href="/about"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                handleAboutClick();
+              }}
               className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
             >
               About
-            </Link>
-            <Link 
-              to="/#volunteer"
-              onClick={() => setIsOpen(false)}
+            </a>
+            <a 
+              href="/#volunteer"
+              onClick={handleVolunteerClick}
               className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
             >
               Volunteer
-            </Link>
+            </a>
             <a 
               href="#" 
               className="text-campaign-cream hover:text-campaign-yellow transition-colors font-body text-sm uppercase tracking-wide py-2"
