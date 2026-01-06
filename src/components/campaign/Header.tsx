@@ -172,13 +172,6 @@ const Header = () => {
             Volunteer
           </a>
 
-          <a
-            href="#"
-            className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide"
-          >
-            Events
-          </a>
-
           <a href="https://secure.actblue.com/donate/alifor65b">
             <Button
               variant="donate"
