@@ -84,10 +84,10 @@ const HeroSection = () => {
                 BUILD A
               </span>
               <span 
-                className="text-campaign-blue block" 
+                className="text-campaign-blue block italic" 
                 style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}
               >
-                SAINT PAUL
+                FUTURE
               </span>
               <span 
                 className="text-campaign-green block font-black" 
