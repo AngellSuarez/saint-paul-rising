@@ -251,15 +251,6 @@ const Header = () => {
             >
               Volunteer
             </a>
-            <a
-              href="#"
-              className="text-campaign-cream hover:text-campaign-yellow transition-colors duration-200 font-body text-sm uppercase tracking-wide py-2 opacity-0"
-              style={{
-                animation: "fadeInUp 0.4s ease-out 0.2s forwards",
-              }}
-            >
-              Events
-            </a>
             <a href="https://secure.actblue.com/donate/alifor65b">
               <Button
                 variant="donate"
