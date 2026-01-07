@@ -202,7 +202,7 @@ const HeroSection = () => {
 
           {/* Subheadline - iOS style spacing */}
           <p className="font-body text-base sm:text-lg text-foreground/80 leading-relaxed relative z-10">
-            Join our grassroots movement fighting for bold, progressive change for Saint Paul.
+            Join our grassroots movement fighting for bold, progressive change for the District 65B.
           </p>
         </div>
 
