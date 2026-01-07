@@ -31,7 +31,7 @@ const About = () => {
     {
       title: "Affordable Housing",
       description:
-        "District 65B families are being priced out of their homes. Ali will fight for rent stabilization, increased affordable housing development, and protections for renters.",
+        "District 65B families are being priced out of their homes. Ali will fight for increased affordable housing development, and protections for renters.",
       icon: "🏠",
     },
     {
