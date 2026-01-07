@@ -85,18 +85,30 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-campaign-blue/75 backdrop-blur-sm texture-green">
       {/* Logo positioned absolutely in the middle of header */}
       {/* Mobile: Smaller, centered, inside header */}
-      <div className="md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[60]">
+      <a
+        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          handleHomeClick();
+        }}
+        className="md:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[60] cursor-pointer"
+      >
         <img
           src={campaignLogo}
           alt="Ali for Saint Paul"
           className={`w-32 drop-shadow-lg relative ${isOpen ? "hidden" : ""}`}
-          style={{ pointerEvents: "none" }}
+          style={{ pointerEvents: "auto" }}
         />
-      </div>
+      </a>
 
       {/* Desktop: Centered in header */}
-      <div
-        className="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-[60]"
+      <a
+        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          handleHomeClick();
+        }}
+        className="hidden md:block absolute left-1/2 transform -translate-x-1/2 z-[60] cursor-pointer"
         style={{ top: "-12.42%" }}
       >
         <div
@@ -107,13 +119,26 @@ const Header = () => {
           src={campaignLogo}
           alt="Ali for Saint Paul"
           className={`w-56 drop-shadow-lg relative ${isOpen ? "hidden" : ""}`}
-          style={{ pointerEvents: "none" }}
+          style={{ pointerEvents: "auto" }}
         />
-      </div>
+      </a>
 
       <div className="container flex items-center justify-between py-6">
         {/* Social Icons - Left (Desktop only) */}
         <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF"
+            className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
+            aria-label="TikTok"
+          >
+            <svg
+              className="w-5 h-5 fill-current"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+            </svg>
+          </a>
           <a
             href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
@@ -122,14 +147,7 @@ const Header = () => {
             <Facebook className="w-5 h-5" />
           </a>
           <a
-            href="#"
-            className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
-            aria-label="Twitter"
-          >
-            <Twitter className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.instagram.com/aliforstp"
+            href="https://www.instagram.com/alifor65b"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="Instagram"
           >
