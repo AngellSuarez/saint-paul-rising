@@ -129,7 +129,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-4">
               <a 
-                href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF" 
+                href="https://www.tiktok.com/@alifor65b?_r=1&_t=ZP-92pk1NzJIY2" 
                 className="text-campaign-cream hover:text-campaign-yellow transition-colors"
                 aria-label="Facebook"
               >
@@ -143,7 +143,7 @@ const Footer = () => {
                 <Twitter className="w-6 h-6" />
               </a>
               <a 
-                href="https://www.instagram.com/aliforstp" 
+                href="https://www.instagram.com/alifor65b" 
                 className="text-campaign-cream hover:text-campaign-yellow transition-colors"
                 aria-label="Instagram"
               >

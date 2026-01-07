@@ -85,9 +85,15 @@ const HeroSection = () => {
               </span>
               <span 
                 className="text-campaign-blue block" 
-                style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}
+                style={{ 
+                  textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)',
+                  fontStyle: 'italic',
+                  fontFamily: "'Pacifico', cursive",
+                  fontWeight: '700',
+                  letterSpacing: '0.1em'
+                }}
               >
-                SAINT PAUL
+                Future
               </span>
               <span 
                 className="text-campaign-green block font-black" 

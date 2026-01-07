@@ -115,7 +115,7 @@ const Header = () => {
         {/* Social Icons - Left (Desktop only) */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF"
+            href="https://www.tiktok.com/@alifor65b?_r=1&_t=ZP-92pk1NzJIY2"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="TictTok"
           >
@@ -129,7 +129,7 @@ const Header = () => {
             <Twitter className="w-5 h-5" />
           </a>
           <a
-            href="https://www.instagram.com/aliforstp"
+            href="https://www.instagram.com/alifor65b"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="Instagram"
           >
