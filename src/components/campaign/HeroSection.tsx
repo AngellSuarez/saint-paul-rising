@@ -1,14 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import candidatePortrait from "@/assets/persona-16-9.png";
-import sunburstBg from "@/assets/sunburst-bg.jpg";
-import campaignLogo from "@/assets/campaign-logo.png";
+import candidatePortrait from "@/assets/persona.jpg";
 
 const HeroSection = () => {
   return (
-    <section 
-      className="relative min-h-screen pt-20 overflow-hidden bg-campaign-cream"
-    >
+    <section className="relative min-h-screen pt-20 overflow-hidden bg-campaign-cream">
       {/* Logo por encima del header para que se vea completamente */}
       {/* White Background - Left Side (desktop) */}
       <div 
@@ -46,23 +41,21 @@ const HeroSection = () => {
         {/* Light gray background */}
         <div className="absolute inset-0 bg-campaign-cream/50" />
         
-        {/* Square Image Container - Centered */}
-        <div 
-          className="absolute inset-0 flex items-center justify-center"
-        >
+        {/* Image Container - Positioned */}
+        <div className="absolute inset-0 flex items-center justify-center">
           <div 
-            className="overflow-hidden shadow-2xl rounded-3xl"
+            className="overflow-hidden shadow-2xl w-[85%] md:w-[90%] lg:w-[85%] xl:w-[80%] 2xl:w-[75%] aspect-[4/5]"
             style={{ 
-              width: 'min(45vw, 400px)',
-              height: 'min(60vw, 600px)',
-              aspectRatio: '2 / 3',
-              borderRadius: '1.5rem'
+              borderRadius: '2.5rem',
+              maxWidth: '600px',
+              maxHeight: '750px'
             }}
           >
             <img 
               src={candidatePortrait} 
               alt="Ali - Candidate for Saint Paul" 
               className="h-full w-full object-cover object-center"
+              style={{ borderRadius: '2.5rem' }}
             />
           </div>
         </div>
@@ -70,17 +63,17 @@ const HeroSection = () => {
 
       {/* Desktop Content - Left Side */}
       <div className="hidden md:flex absolute left-0 top-0 h-full z-10 items-center w-[55%]" style={{ top: '5rem', height: 'calc(100vh - 5rem)' }}>
-        <div className="pl-8 md:pl-12 lg:pl-16 w-full h-full flex flex-col justify-center py-8 md:py-12">
+        <div className="pl-6 md:pl-8 lg:pl-12 xl:pl-16 w-full h-full flex flex-col justify-center py-6 md:py-8 lg:py-12">
           {/* Left Column - Text & CTAs - Aligned left */}
-          <div className="flex flex-col gap-8 justify-center relative z-10 h-full">
+          <div className="flex flex-col gap-4 md:gap-6 lg:gap-8 justify-center relative z-10 h-full">
             {/* Decorative element before headline */}
-            <div className="flex items-center gap-4 mb-2">
-              <div className="w-12 h-1 bg-gradient-to-r from-campaign-green to-campaign-yellow" />
-              <div className="w-2 h-2 bg-campaign-blue rounded-full" />
+            <div className="flex items-center gap-3 md:gap-4 mb-2">
+              <div className="w-8 md:w-10 lg:w-12 h-1 bg-gradient-to-r from-campaign-green to-campaign-yellow" />
+              <div className="w-1.5 md:w-2 h-1.5 md:h-2 bg-campaign-blue rounded-full" />
             </div>
             
             {/* Headline */}
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight text-left font-bold ">
+            <h1 className="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight text-left font-bold">
               <span 
                 className="text-campaign-blue block" 
                 style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)'}}
@@ -108,19 +101,19 @@ const HeroSection = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="font-body text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-2xl text-foreground leading-relaxed text-left font-semibold">
+            <p className="font-body text-base md:text-lg lg:text-xl xl:text-2xl max-w-xl md:max-w-2xl text-foreground leading-relaxed text-left font-semibold">
               Join our grassroots movement fighting for bold, progressive change for the District 65B.
             </p>
 
             {/* Decorative divider */}
-            <div className="flex items-center gap-3 my-0">
-              <div className="w-12 h-1 bg-gradient-to-r from-campaign-yellow to-campaign-green" />
-              <div className="w-2 h-2 bg-campaign-blue rounded-full" />
-              <div className="w-24 h-px bg-gradient-to-r from-campaign-yellow to-transparent" />
+            <div className="flex items-center gap-2 md:gap-3 my-0">
+              <div className="w-8 md:w-10 lg:w-12 h-1 bg-gradient-to-r from-campaign-yellow to-campaign-green" />
+              <div className="w-1.5 md:w-2 h-1.5 md:h-2 bg-campaign-blue rounded-full" />
+              <div className="w-16 md:w-20 lg:w-24 h-px bg-gradient-to-r from-campaign-yellow to-transparent" />
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mt-2 mb-5">
+            <div className="flex flex-wrap gap-3 md:gap-4 mt-4 md:mt-6">
               <a href="/#volunteer" onClick={(e) => {
                 e.preventDefault();
                 const scrollToVolunteer = () => {
@@ -194,10 +187,10 @@ const HeroSection = () => {
               BUILD A
             </span>
             <span 
-              className="text-campaign-blue block" 
+              className="text-campaign-blue block italic" 
               style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.05)' }}
             >
-              SAINT PAUL
+              FUTURE
             </span>
             <span 
               className="text-campaign-green block font-black" 
@@ -273,7 +266,7 @@ const HeroSection = () => {
                 Sign Up to Volunteer
               </Button>
             </a>
-            <a href="">
+            <a href="https://secure.actblue.com/donate/alifor65b">
               <Button 
                 variant="heroYellow" 
                 size="lg" 

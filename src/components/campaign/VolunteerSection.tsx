@@ -12,13 +12,73 @@ const VolunteerSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  // List of temporary email providers to block
+  const blockedEmailDomains = [
+    'yopmail.com',
+    'tempmail.com',
+    'temp-mail.org',
+    '10minutemail.com',
+    'guerrillamail.com',
+    'mailinator.com',
+    'trashmail.com',
+    'throwaway.email',
+    'temp-mail.io',
+    'dispostable.com',
+    'fakeinbox.com',
+    'sharklasers.com',
+  ];
+
+  const isValidEmail = (emailValue: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailValue)) {
+      return false;
+    }
+
+    const domain = emailValue.split('@')[1].toLowerCase();
+    return !blockedEmailDomains.includes(domain);
+  };
+
+  const validateForm = (): string | null => {
+    // Validate firstName
+    if (!firstName || firstName.trim().length < 3) {
+      return "First name must be at least 3 characters long";
+    }
+
+    // Validate lastName
+    if (!lastName || lastName.trim().length < 3) {
+      return "Last name must be at least 3 characters long";
+    }
+
+    // Validate phoneNumber
+    if (!phoneNumber || phoneNumber.trim().length < 10) {
+      return "Phone number must be at least 10 characters long";
+    }
+
+    // Validate email
+    if (!email || email.trim().length < 3) {
+      return "Email is required";
+    }
+
+    if (!isValidEmail(email)) {
+      return "Please use a valid personal email address (temporary email services are not allowed)";
+    }
+
+    // Validate ZIPCode
+    if (!ZIPCode || ZIPCode.trim().length < 5) {
+      return "ZIP code must be at least 5 characters long";
+    }
+
+    return null;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!firstName || !lastName || !phoneNumber || !ZIPCode || !email) {
+    const validationError = validateForm();
+    if (validationError) {
       toast({
-        title: "Please fill all fields",
-        description: "All fields are required to sign up as a volunteer.",
+        title: "Validation Error",
+        description: validationError,
         variant: "destructive",
       });
       return;
@@ -127,7 +187,7 @@ const VolunteerSection = () => {
           
           {/* Subtext */}
           <p className="font-body text-campaign-cream/90 text-base md:text-lg mb-8 text-center">
-            Get involved today! Sign up to volunteer and join our grassroots movement for a better Saint Paul.
+            Get involved today! Sign up to volunteer and join our grassroots movement for a better District 65B.
           </p>
 
           {/* Form - iOS style card */}

@@ -159,7 +159,9 @@ const Footer = () => {
 
             {/* Links */}
             <div className="flex items-center gap-6 text-campaign-cream/80 font-body text-sm">
-              <span>ALIFORSTP.ORG</span>
+              <a href="https://www.alifor65b.org/">
+                <span>ALIFOR65B.ORG</span>
+              </a>
               <span>|</span>
               <a 
                 href="/about" 
