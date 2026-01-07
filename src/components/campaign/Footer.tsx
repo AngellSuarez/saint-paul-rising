@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Facebook, Twitter, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import campaignLogo from "@/assets/logo-fondo.png";
+import campaignLogo from "@/assets//ali65mb-black-removebg-preview.png";
 
 const Footer = () => {
   const scrollToTop = () => {
