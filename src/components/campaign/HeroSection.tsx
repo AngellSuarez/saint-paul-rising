@@ -38,16 +38,34 @@ const HeroSection = () => {
         <div className="absolute bottom-0 right-0 w-24 h-24 border-b-4 border-r-4 border-campaign-green/20" />
       </div>
 
-      {/* Background Image - Right Side (desktop) */}
+      {/* Background - Right Side (desktop) */}
       <div 
-        className="hidden md:block absolute right-0 top-0 h-full overflow-hidden z-0"
+        className="hidden md:block absolute right-0 top-0 h-full z-0 overflow-hidden"
         style={{ top: '5rem', height: 'calc(100vh - 5rem)', width: '45%' }}
       >
-        <img 
-          src={candidatePortrait} 
-          alt="Ali - Candidate for Saint Paul" 
-          className="h-full w-full object-cover object-center"
-        />
+        {/* Light gray background */}
+        <div className="absolute inset-0 bg-campaign-cream/50" />
+        
+        {/* Square Image Container - Centered */}
+        <div 
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <div 
+            className="overflow-hidden shadow-2xl rounded-3xl"
+            style={{ 
+              width: 'min(45vw, 400px)',
+              height: 'min(60vw, 600px)',
+              aspectRatio: '2 / 3',
+              borderRadius: '1.5rem'
+            }}
+          >
+            <img 
+              src={candidatePortrait} 
+              alt="Ali - Candidate for Saint Paul" 
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Desktop Content - Left Side */}

@@ -129,7 +129,7 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-4">
               <a
-            href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF"
+            href="https://www.tiktok.com/@alifor65b?_r=1&_t=ZP-92rRqKSGxSh"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
             aria-label="TikTok"
           >
@@ -142,9 +142,9 @@ const Footer = () => {
             </svg>
           </a>
               <a
-            href="https://www.tiktok.com/@aliforstp?_r=1&_t=ZP-92niVbCYWWF"
+            href="#"
             className="text-campaign-cream hover:text-campaign-yellow transition-all duration-200 hover:scale-110 active:scale-95"
-            aria-label="TictTok"
+            aria-label="Facebook"
           >
             <Facebook className="w-5 h-5" />
           </a>
