@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+    laptop: { raw: "(max-height: 800px)" },
+  },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -65,6 +68,7 @@ export default {
           cream: "hsl(var(--campaign-cream))",
           "cream-dark": "hsl(var(--campaign-cream-dark))",
         },
+
       },
       fontFamily: {
         display: ['Archivo Black', 'sans-serif'],

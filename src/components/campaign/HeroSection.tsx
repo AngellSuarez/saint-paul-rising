@@ -10,14 +10,6 @@ const HeroSection = () => {
       className="relative min-h-screen pt-20 overflow-hidden bg-campaign-cream"
     >
       {/* Logo por encima del header para que se vea completamente */}
-      <div className="absolute top-0 left-[38%] transform -translate-x-1/2 z-[60]" style={{ marginTop: '-2.5rem' }}>
-        <img
-          src={campaignLogo}
-          alt="Ali for Saint Paul"
-          className="w-72 md:w-96 drop-shadow-lg"
-          style={{ pointerEvents: 'none' }}
-        />
-      </div>
       {/* White Background - Left Side (desktop) */}
       <div 
         className="hidden md:block absolute left-0 top-0 h-full z-0 overflow-hidden"
@@ -70,10 +62,10 @@ const HeroSection = () => {
             </div>
             
             {/* Headline */}
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight text-left font-bold">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight text-left font-bold ">
               <span 
                 className="text-campaign-blue block" 
-                style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}
+                style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)'}}
               >
                 LET'S
               </span>
@@ -98,19 +90,19 @@ const HeroSection = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="font-body text-xl md:text-2xl lg:text-3xl max-w-2xl text-foreground leading-relaxed text-left font-semibold">
+            <p className="font-body text-lg md:text-xl lg:text-2xl xl:text-3xl max-w-2xl text-foreground leading-relaxed text-left font-semibold">
               Join our grassroots movement fighting for bold, progressive change for the District 65B.
             </p>
 
             {/* Decorative divider */}
-            <div className="flex items-center gap-3 my-4">
+            <div className="flex items-center gap-3 my-0">
               <div className="w-12 h-1 bg-gradient-to-r from-campaign-yellow to-campaign-green" />
               <div className="w-2 h-2 bg-campaign-blue rounded-full" />
               <div className="w-24 h-px bg-gradient-to-r from-campaign-yellow to-transparent" />
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-wrap gap-4 mt-2 mb-5">
               <a href="/#volunteer" onClick={(e) => {
                 e.preventDefault();
                 const scrollToVolunteer = () => {
