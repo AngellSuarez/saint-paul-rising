@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import candidatePortrait from "@/assets/persona.jpg";
+import candidatePortrait from "@/assets/ali2.jpeg";
 
 const HeroSection = () => {
   return (
@@ -102,7 +102,7 @@ const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="font-body text-base md:text-lg lg:text-xl xl:text-2xl max-w-xl md:max-w-2xl text-foreground leading-relaxed text-left font-semibold">
-              Join our grassroots movement fighting for bold, progressive change for the District 65B.
+              Join our grassroots movement fighting for bold, progressive change for our community in the District 65B.
             </p>
 
             {/* Decorative divider */}
@@ -202,7 +202,7 @@ const HeroSection = () => {
 
           {/* Subheadline - iOS style spacing */}
           <p className="font-body text-base sm:text-lg text-foreground/80 leading-relaxed relative z-10">
-            Join our grassroots movement fighting for bold, progressive change for Saint Paul.
+            Join our grassroots movement fighting for bold, progressive change for our community in the District 65B.
           </p>
         </div>
 
