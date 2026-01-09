@@ -43,13 +43,13 @@ const About = () => {
     {
       title: "Climate Action",
       description:
-        "Investing in green infrastructure, renewable energy, and sustainable transportation to make Saint Paul a leader in climate action.",
+        "Investing in green infrastructure, renewable energy, and sustainable transportation to make the district 65B a leader in climate action.",
       icon: "🌿",
     },
     {
       title: "Education & Youth",
       description:
-        "Supporting our schools, expanding youth programs, and ensuring every child in Saint Paul has the opportunity to succeed.",
+        "Supporting our schools, expanding youth programs, and ensuring every child in the district 65B has the opportunity to succeed.",
       icon: "📚",
     },
     {
@@ -77,7 +77,7 @@ const About = () => {
             MEET ALI
           </h1>
           <p className="font-body text-campaign-cream text-xl max-w-2xl mx-auto">
-            A community organizer, Saint Paul resident, and advocate for a city
+            A community organizer, District 65B resident, and advocate for a city
             that works for everyone.
           </p>
         </div>
