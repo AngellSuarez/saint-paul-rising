@@ -1,7 +1,7 @@
 import Header from "@/components/campaign/Header";
 import Footer from "@/components/campaign/Footer";
 import { Button } from "@/components/ui/button";
-import communityPhoto from "@/assets/alipodio.jpg";
+import communityPhoto from "@/assets/ali2.jpeg";
 
 const About = () => {
   const values = [
