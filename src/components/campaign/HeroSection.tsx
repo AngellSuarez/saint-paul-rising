@@ -78,27 +78,20 @@ const HeroSection = () => {
                 className="text-campaign-blue block" 
                 style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)'}}
               >
-                LET'S
-              </span>
-              <span 
-                className="text-campaign-yellow block font-black" 
-                style={{ textShadow: '3px 3px 0 hsl(200 100% 40% / 0.3)' }}
-              >
-                BUILD A
+                A NEW
               </span>
               <span 
                 className="text-campaign-blue block italic" 
                 style={{ textShadow: '2px 2px 0 hsl(45 90% 55% / 0.5)' }}
               >
-                FUTURE
+                GENERATION
               </span>
               <span 
-                className="text-campaign-green block font-black" 
-                style={{ textShadow: '3px 3px 0 hsl(45 90% 55% / 0.6)' }}
+                className="text-campaign-yellow block font-black" 
+                style={{ textShadow: '3px 3px 0 hsl(200 100% 40% / 0.3)' }}
               >
-                FOR ALL OF US.
+                STEPPING UP
               </span>
-            </h1>
 
             {/* Subheadline */}
             <p className="font-body text-base md:text-lg lg:text-xl xl:text-2xl max-w-xl md:max-w-2xl text-foreground leading-relaxed text-left font-semibold">
