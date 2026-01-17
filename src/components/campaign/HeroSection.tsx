@@ -36,7 +36,11 @@ const HeroSection = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div
             className="overflow-hidden shadow-2xl w-[85%] aspect-[4/5]"
-            style={{ borderRadius: "2.5rem", maxWidth: "600px", maxHeight: "750px" }}
+            style={{
+              borderRadius: "2.5rem",
+              maxWidth: "600px",
+              maxHeight: "750px",
+            }}
           >
             <img
               src={candidatePortrait}
@@ -54,10 +58,11 @@ const HeroSection = () => {
       >
         <div className="pl-8 w-full h-full flex flex-col justify-center">
           <div className="flex flex-col gap-6">
-
             <h1 className="font-display text-4xl lg:text-6xl leading-tight font-bold">
               <span className="text-campaign-blue block">A NEW</span>
-              <span className="text-campaign-blue block italic">GENERATION</span>
+              <span className="text-campaign-blue block italic">
+                GENERATION
+              </span>
               <span className="text-campaign-yellow block font-black">
                 STEPPING UP
               </span>
@@ -80,7 +85,6 @@ const HeroSection = () => {
                 </Button>
               </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -88,14 +92,15 @@ const HeroSection = () => {
       {/* Mobile */}
       <div className="md:hidden px-4 pb-8 pt-6">
         <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-6 shadow-2xl mb-4">
-          <h1 className="text-3xl font-bold leading-tight mb-4">
-            <span className="block text-campaign-blue">LET'S</span>
-            <span className="block text-campaign-yellow">BUILD A</span>
-            <span className="block text-campaign-blue italic">FUTURE</span>
-            <span className="block text-campaign-green">FOR ALL OF US.</span>
+          <h1 className="text-3xl font-bold leading-tight mb-4 font-display">
+            <span className="block text-campaign-blue">A NEW</span>
+            <span className="block text-campaign-blue italic">GENERATION</span>
+            <span className="block text-campaign-yellow font-black">
+              STEPPING UP
+            </span>
           </h1>
 
-          <p className="text-base text-foreground/80">
+          <p className="text-base font-semibold">
             Join our grassroots movement fighting for bold, progressive change
             for our community in District 65B.
           </p>
